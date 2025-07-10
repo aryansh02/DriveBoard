@@ -16,6 +16,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       data: listings
     });
   } catch (error) {
+    console.error('Failed to fetch listings:', error);
     res.status(500).json({
       success: false,
       message: 'Failed to fetch listings'
