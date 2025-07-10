@@ -26,6 +26,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       data: listing
     });
   } catch (error) {
+    console.error('Failed to approve listing:', error);
     res.status(500).json({
       success: false,
       message: 'Failed to approve listing'
